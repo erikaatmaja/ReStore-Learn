@@ -1,7 +1,6 @@
-import { Button } from "@mui/material";
+import { useEffect, useState } from "react";
 import { Product } from "../../app/models/product";
 import ProductList from "./ProductList";
-import { useEffect, useState } from "react";
 
 export default function Catalog() {
     // console.log('test console log')
@@ -10,7 +9,7 @@ export default function Catalog() {
     useEffect(() => {
         fetch('http://localhost:5000/api/products')
             .then(response => response.json())
-            .then(data => setProducts(data))
+            .then(data => setProducts(data));
     }, [])
 
     return (
